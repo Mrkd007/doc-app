@@ -4,10 +4,11 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import { userLoggedIn } from "./utils/helperFunctions";
 import RegisterLogin from "./pages/RegisterLogin";
+import About from "./pages/About";
 
 function App() {
 	return (
-		<div className=''>
+		<div>
 			<Routes>
 				{/* <Route
           exact
@@ -15,6 +16,7 @@ function App() {
 					element={userLoggedIn ? <Navigate to='/login' /> : <Home /> }
 				/> */}
 				<Route path='/' element={<Home />} />
+				<Route path='/about' element={<About />} />
 				<Route path='/login' element={<RegisterLogin type='login'/>} />
 				<Route path='/register' element={<RegisterLogin type='register'/>} />
 				<Route exact path='/contact' element={userLoggedIn ? <Navigate to='/login' /> : <Contact /> } />

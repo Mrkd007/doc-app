@@ -8,7 +8,7 @@ import LOGO from '../../assets/images/logo.png'
 import { useNavigate } from 'react-router-dom';
 const { Header } = Layout;
 
-const HeaderComp = () => {
+const HeaderComp = ({selectedTab}) => {
   const navigate = useNavigate();
   const user = getLS('user');
   const role = getLS('role');
@@ -16,7 +16,11 @@ const HeaderComp = () => {
 
   const onNavChange = ({key, domEvent}) => {
     console.log(key);
-    navigate('/' + key)
+    if(key === 'home') {
+      navigate('/')
+    } else {
+      navigate('/' + key)
+    }
   } 
   
   const handleMenuClick = () => {
@@ -71,7 +75,7 @@ const HeaderComp = () => {
           className="doc-app__header-menu"
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['home']}
+          defaultSelectedKeys={selectedTab ? [selectedTab] : ['home']}
           items={items}
           onSelect={onNavChange}
         />

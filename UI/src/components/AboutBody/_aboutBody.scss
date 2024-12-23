@@ -1,0 +1,42 @@
+.doc-app__aboutBody {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &-img {
+    width: calc(100% + 8rem);
+    margin: 0 -4rem;
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 40rem;
+
+      &-title {
+        color: #007E85;
+        font-size: 1.5rem;
+      }
+
+      &-list {
+        color: #333;
+        font-size: 1rem;
+      }
+
+      &-desc {
+        color: #333;
+        font-size: 1rem;
+      }
+    }
+  }
+}
