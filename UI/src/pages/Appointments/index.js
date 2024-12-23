@@ -1,8 +1,21 @@
-import React from 'react'
+import { Layout } from 'antd'
+import HeaderComp from '../../components/Header'
+import { Content } from 'antd/es/layout/layout'
+import FooterComp from '../../components/Footer'
 
 const Appointments = () => {
   return (
-    <div>Appointments</div>
+    <Layout breakpoints='md'>
+      <HeaderComp selectedTab={'appointments'} />
+			<Content
+				className='doc-app__body'
+				style={{
+					padding: "0 48px",
+				}}
+			>
+			</Content>
+      <FooterComp />
+		</Layout>
   )
 }
 

@@ -1,5 +1,4 @@
 import { Layout } from 'antd'
-import React from 'react'
 import HeaderComp from '../../components/Header'
 import { Content } from 'antd/es/layout/layout'
 import FooterComp from '../../components/Footer'

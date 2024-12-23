@@ -1,9 +1,9 @@
 import { Layout } from 'antd'
 import HeaderComp from '../../components/Header'
-import FooterComp from '../../components/Footer'
 import { Content } from 'antd/es/layout/layout'
+import FooterComp from '../../components/Footer'
 
-const Appointment = () => {
+const Doctors = () => {
   return (
     <Layout breakpoints='md'>
       <HeaderComp selectedTab={'appointment'} />
@@ -19,4 +19,4 @@ const Appointment = () => {
   )
 }
 
-export default Appointment
+export default Doctors

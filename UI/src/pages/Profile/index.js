@@ -4,10 +4,10 @@ import { Content } from "antd/es/layout/layout"
 import FooterComp from "../../components/Footer"
 
 
-const Contact = () => {
+const Profile = () => {
   return (
     <Layout breakpoints='md'>
-      <HeaderComp selectedTab={'contact'} />
+      <HeaderComp selectedTab={'profile'} />
 			<Content
 				className='doc-app__body'
 				style={{
@@ -20,4 +20,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Profile
