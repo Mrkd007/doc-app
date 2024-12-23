@@ -2,6 +2,7 @@ import { Layout } from "antd"
 import HeaderComp from "../../components/Header"
 import { Content } from "antd/es/layout/layout"
 import FooterComp from "../../components/Footer"
+import ContactBody from "../../components/ContactBody"
 
 
 const Contact = () => {
@@ -14,6 +15,7 @@ const Contact = () => {
 					padding: "0 48px",
 				}}
 			>
+        <ContactBody />
 			</Content>
       <FooterComp />
 		</Layout>
