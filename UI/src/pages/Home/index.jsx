@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumb, Layout, theme } from 'antd';
 import HeaderComp from '../../components/Header';
 import HeroArea from '../../components/HeroArea';
+import Body from '../../components/Body';
 const { Content, Footer } = Layout;
 const Home = () => {
   const {
@@ -26,17 +27,7 @@ const Home = () => {
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb> */}
         <HeroArea />
-        <div
-          className='doc-app__body'
-          style={{
-            padding: 24,
-            minHeight: 380,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          Content
-        </div>
+        <Body />
       </Content>
       <Footer
         style={{

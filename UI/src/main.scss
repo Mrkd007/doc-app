@@ -7,7 +7,13 @@ body {
   box-sizing: border-box;
 }
 
+.center-aligned-text {
+  text-align: center
+}
+
 
 @import './pages/RegisterLogin/registerLogin';
 @import './components/Header/header';
 @import './components/HeroArea/heroArea';
+@import './components/Body/body';
+@import './components/Cards/cards';

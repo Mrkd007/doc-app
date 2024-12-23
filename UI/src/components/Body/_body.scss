@@ -1,0 +1,75 @@
+.doc-app__bodyComp {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .doc-app__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+    &.data-section {
+      
+    }
+
+    &.service-section {
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #007E85;
+    }
+
+    &-subtitle {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    &-data {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 5rem;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        &-title {
+          margin: 0;
+          color: #007E85;
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        &-descp {
+          // color: #555;
+        }
+      }
+    }
+
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      // justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+  }
+}
