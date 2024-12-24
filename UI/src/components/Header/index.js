@@ -10,8 +10,8 @@ const { Header } = Layout;
 const HeaderComp = ({ selectedTab }) => {
 	const navigate = useNavigate();
 	let user = getLS("user");
-  user = JSON.parse(user);
-  console.log(user)
+	user = JSON.parse(user);
+	console.log(user);
 	const role = getLS("role");
 	const [items, setItems] = useState(menuItems);
 
@@ -23,14 +23,23 @@ const HeaderComp = ({ selectedTab }) => {
 		}
 	};
 
-	const handleMenuClick = () => {};
+	const handleMenuClick = ({ key }) => {
+		if (key === "profile") {
+			navigate("/" + key);
+		} else {
+			localStorage.clear();
+			navigate("/");
+		}
+	};
 
-	const handleButtonClick = () => {};
+	const handleButtonClick = (values) => {
+		console.log(values, 111);
+	};
 
 	const items1 = [
 		{
 			label: "Profile",
-			key: "1",
+			key: "profile",
 			icon: <SettingOutlined />,
 		},
 		{
@@ -38,7 +47,7 @@ const HeaderComp = ({ selectedTab }) => {
 		},
 		{
 			label: "Log out",
-			key: "2",
+			key: "logout",
 			icon: <LoginOutlined />,
 			danger: true,
 		},
@@ -54,7 +63,12 @@ const HeaderComp = ({ selectedTab }) => {
 			setItems(tempArr);
 		} else if (role === "admin") {
 			const tempArr = [...menuItems];
-			tempArr.splice(1, 1, { key: "appointments", label: "Appointments" }, { key: "doctors", label: "Doctors" });
+			tempArr.splice(
+				1,
+				1,
+				{ key: "appointments", label: "Appointments" },
+				{ key: "doctors", label: "Doctors" },
+			);
 			setItems(tempArr);
 		}
 	}, [role]);

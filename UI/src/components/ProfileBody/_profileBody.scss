@@ -1,0 +1,116 @@
+.doc-app__profile {
+  margin-top: 4rem;
+
+  &-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background:#fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 5px 5px 35px 2px #b7c4c7, inset 5px 5px 35px 2px #e2e5e5;
+
+    &-left {
+      background-color: #0B8FAC;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25rem;
+      height: 100%;
+      padding: 3rem;
+    }
+
+    &-right {
+      width: calc(100% - 34rem);
+      padding: 2rem;
+    }
+  }
+
+  &-image {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 4rem;
+    margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-name {
+    font-size: 2rem;
+    text-shadow: 1px 1px 5px #b8b8b8;
+    margin: 0;
+    cursor: default;
+  }
+
+  &-designation {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ccc;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    cursor: default;
+  }
+
+  &-speciality {
+    margin-bottom: 0.25rem;
+    cursor: default;
+  }
+
+  &-rating {
+    display: flex;
+    gap: 0.25rem;
+    cursor: default;
+  }
+
+  &-social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  &-section {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding: 2rem;
+    padding-left: 0;
+    gap: 2rem;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 50%;
+    flex: 1;
+
+    &-label {
+      color: #007E85;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+}

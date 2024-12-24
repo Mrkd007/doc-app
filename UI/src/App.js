@@ -25,7 +25,7 @@ function App() {
 					<Route path='/appointment' element={<Appointment />} />
 					<Route path='/appointments' element={<Appointments />} />
 					<Route path='/doctors' element={<Doctors />} />
-					<Route path='/profile' element={<Profile />} />
+					<Route path='/profile' element={!userLoggedIn ? <Navigate to='/' /> : <Profile />} />
 					<Route path='/login' element={<RegisterLogin type='login' />} />
 					<Route path='/adminlogin' element={<RegisterLogin type='doctor' />} />
 					<Route path='/register' element={<RegisterLogin type='register' />} />

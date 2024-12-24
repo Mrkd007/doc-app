@@ -13,6 +13,7 @@ export const userLoggedIn = () => {
 
 	if (!(user || token || role)) {
 		return false;
+	} else {
+		return true;
 	}
-	return true;
 };

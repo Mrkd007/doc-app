@@ -210,4 +210,15 @@ export const doctorsList = [
 	},
 ];
 
+export const imageObj = {
+	DOCTOR1: DOCTOR1,
+	DOCTOR2: DOCTOR2,
+	DOCTOR3: DOCTOR3,
+	DOCTOR4: DOCTOR4,
+	DOCTOR5: DOCTOR5,
+	DOCTOR6: DOCTOR1,
+	DOCTOR7: DOCTOR3,
+	DOCTOR8: DOCTOR5,
+}
+
 export const BASE_URL = 'http://localhost:8080/api/v1'
