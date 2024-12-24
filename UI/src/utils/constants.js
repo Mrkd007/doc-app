@@ -3,6 +3,8 @@ import BONES_IMG from "../assets/images/bone.png";
 import DIAGNOSIS_IMG from "../assets/images/diagnosis.png";
 import CARDIOLOGY_IMG from "../assets/images/cardiology.png";
 import SURGERY_IMG from "../assets/images/surgery.png";
+import PHYSICIAN_IMG from "../assets/images/physician.png";
+import MRI_IMG from "../assets/images/MRI.PNG";
 import EYE_IMG from "../assets/images/eye_care.png";
 import DOCTOR1 from "../assets/images/male_doc.png";
 import DOCTOR2 from "../assets/images/male_doc1.png";
@@ -99,6 +101,22 @@ export const serviceList = [
 		desc: "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.",
 		learnMoreBtn: true,
 	},
+	{
+		id: "service7",
+		image: PHYSICIAN_IMG,
+		imageType: "cover",
+		title: "Physician",
+		desc: "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.",
+		learnMoreBtn: true,
+	},
+	{
+		id: "service8",
+		image: MRI_IMG,
+		imageType: "cover",
+		title: "MRI",
+		desc: "Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.",
+		learnMoreBtn: true,
+	},
 ];
 
 export const doctorsList = [
@@ -191,3 +209,5 @@ export const doctorsList = [
 		rating: 4.9,
 	},
 ];
+
+export const BASE_URL = 'http://localhost:8080/api/v1'

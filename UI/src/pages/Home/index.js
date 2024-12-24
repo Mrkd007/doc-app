@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout } from "antd";
 import HeroArea from "../../components/HeroArea";
 import Body from "../../components/Body";
@@ -8,17 +7,12 @@ const { Content } = Layout;
 const Home = () => {
 	return (
 		<Layout breakpoints='md'>
-      <HeaderComp />
-			<Content
-				className='doc-app__body'
-				style={{
-					padding: "0 48px",
-				}}
-			>
+			<HeaderComp />
+			<Content className='doc-app__body'>
 				<HeroArea />
 				<Body />
 			</Content>
-      <FooterComp />
+			<FooterComp />
 		</Layout>
 	);
 };

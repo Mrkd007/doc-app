@@ -11,6 +11,10 @@ body {
   text-align: center
 }
 
+.doc-app__body {
+  padding: 0 48px;
+}
+
 
 @import './pages/RegisterLogin/registerLogin';
 @import './components/Header/header';
@@ -20,3 +24,5 @@ body {
 @import './components/Footer/footer';
 @import './components/AboutBody/aboutBody';
 @import './components/ContactBody/contactBody';
+@import './components/AppointmentTable/appointmentTable';
+@import './components/DoctorModal/doctorModal';
