@@ -19,7 +19,7 @@ const ProfileBody = () => {
 						<div className='doc-app__profile-image'>
 							<img
 								src={
-									userData?.profile.includes("http")
+									userData?.profile?.includes("http")
 										? userData?.profile
 										: imageObj[userData?.profile]
 								}

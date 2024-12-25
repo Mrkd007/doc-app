@@ -7,10 +7,10 @@ const JWT = require("jsonwebtoken");
 // REGISTER
 const registerController = async (req, res) => {
 	try {
-		const { userName, email, password, phone, address, answer } = req.body;
+		const { userName, email, password } = req.body;
 		// validation
-		if (!userName || !email || !password || !phone || !answer) {
-			return res.send(500).send({
+		if (!userName || !email || !password) {
+			return res.status(500).send({
 				success: false,
 				message: "Please provide all field data",
 			});
@@ -18,7 +18,7 @@ const registerController = async (req, res) => {
 		// check user
 		const existing = await userModel.findOne({ email });
 		if (existing) {
-			return res.send(500).send({
+			return res.status(500).send({
 				success: false,
 				message: "User already exists",
 			});
@@ -30,17 +30,14 @@ const registerController = async (req, res) => {
 			userName,
 			email,
 			password: hashPassword,
-			phone,
-			address,
-			answer,
 		});
 		res.status(201).send({
 			success: true,
-			message: "Successfully registered",
+			message: "User successfully registered",
 		});
 	} catch (error) {
 		console.log("Auth error --> ".bgBlue, error);
-		res.send(500).send({
+		res.status(500).send({
 			success: false,
 			message: "Error in register api",
 			error,
@@ -89,7 +86,7 @@ const loginController = async (req, res) => {
 		});
 	} catch (error) {
 		console.log("Auth error --> ".bgBlue, error);
-		return res.send(500).send({
+		return res.status(500).send({
 			success: false,
 			message: "Error in login api",
 			error,
@@ -138,7 +135,7 @@ const loginDocController = async (req, res) => {
 		});
 	} catch (error) {
 		console.log("Auth error --> ".bgBlue, error);
-		return res.send(500).send({
+		return res.status(500).send({
 			success: false,
 			message: "Error in login api",
 			error,

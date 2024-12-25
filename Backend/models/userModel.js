@@ -22,7 +22,6 @@ const userSchema = new mongoose.Schema(
 		},
 		phone: {
 			type: String,
-			required: [true, "Phone no. is required"],
 		},
 		role: {
 			type: String,
@@ -41,6 +40,10 @@ const userSchema = new mongoose.Schema(
 			enum: ["male", "female", "others"],
 			required: [true, "gender is required"],
 		},
+		appointments: {
+			type: Array,
+			default: [],
+		}
 	},
 	{ timestamps: true },
 );

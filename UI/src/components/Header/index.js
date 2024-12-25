@@ -11,7 +11,6 @@ const HeaderComp = ({ selectedTab }) => {
 	const navigate = useNavigate();
 	let user = getLS("user");
 	user = JSON.parse(user);
-	console.log(user);
 	const role = getLS("role");
 	const [items, setItems] = useState(menuItems);
 
@@ -57,15 +56,15 @@ const HeaderComp = ({ selectedTab }) => {
 		onClick: handleMenuClick,
 	};
 	useEffect(() => {
-		if (role === "doctor") {
+		if (role === "doctor" || role === "user") {
 			const tempArr = [...menuItems];
-			tempArr.splice(1, 1, { key: "appointments", label: "Appointments" });
+			tempArr.splice(1, 0, { key: "appointments", label: "Appointments" });
 			setItems(tempArr);
 		} else if (role === "admin") {
 			const tempArr = [...menuItems];
 			tempArr.splice(
 				1,
-				1,
+				0,
 				{ key: "appointments", label: "Appointments" },
 				{ key: "doctors", label: "Doctors" },
 			);

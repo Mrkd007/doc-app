@@ -31,7 +31,7 @@ router.delete("/deleteUser/:id/:type", authMiddleware, deleteProfileController);
 // ADD_DOC || POST
 router.post("/add-doctor", authMiddleware, addDoctorController);
 
-// GET USER || GET
+// GET_DOC || GET
 router.get("/doc-list", authMiddleware, getDoctorListController);
 
 module.exports = router;

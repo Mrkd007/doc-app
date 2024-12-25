@@ -9,9 +9,11 @@ const appointmentSchema = new mongoose.Schema(
 		},
 		phone: {
 			type: String,
+			required: [true, "Patient phone is required"],
 		},
 		email: {
 			type: String,
+			required: [true, "Patient email is required"],
 		},
 		gender: {
 			type: String,
@@ -25,8 +27,8 @@ const appointmentSchema = new mongoose.Schema(
 		mode: {
 			type: String,
 		},
-		slot: {
-			type: Date,
+		date: {
+			type: String,
 		},
 		time: {
 			type: String,

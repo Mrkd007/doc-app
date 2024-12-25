@@ -2,7 +2,6 @@ const userModel = require("../models/userModel");
 const doctorModel = require("../models/doctorModel");
 const bcrypt = require("bcryptjs");
 const salt = bcrypt.genSaltSync(10);
-const JWT = require("jsonwebtoken");
 
 // GET USER INFO
 const getUserController = async (req, res) => {
@@ -161,6 +160,8 @@ const resetPasswordController = async (req, res) => {
 	}
 };
 
+
+// DELETE USER PROFILE
 const deleteProfileController = async (req, res) => {
 	try {
 		const { id, type } = req.params;

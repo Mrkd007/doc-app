@@ -2,15 +2,15 @@ import { Button, Form, Input, Modal, Select } from "antd";
 import { Option } from "antd/es/mentions";
 import { useEffect, useState } from "react";
 import { useAddDocMutation, useUpdateMutation } from "../../hooks/userHook";
-import { ToastContainer, toast } from "react-toastify";
 
-const AppointmentModal = (props) => {
+const DoctorModal = (props) => {
 	const {
 		openModal,
 		setOpenModal,
 		fetchDocList,
 		editableData,
 		setEditableData,
+		toast
 	} = props;
 	const [loading, setLoading] = useState(false);
 	const [form] = Form.useForm();
@@ -30,7 +30,6 @@ const AppointmentModal = (props) => {
 	} = useUpdateMutation();
 
 	useEffect(() => {
-		console.log(docData, error?.response?.data);
 		if (error?.response) {
 			toast.error(error?.response?.data?.message || "Error in saving data", {
 				pauseOnHover: false,
@@ -320,9 +319,8 @@ const AppointmentModal = (props) => {
 					</div>
 				</Form>
 			</Modal>
-			<ToastContainer/>
 		</div>
 	);
 };
 
-export default AppointmentModal;
+export default DoctorModal;

@@ -1,10 +1,19 @@
-import { DeleteFilled, EditFilled, ExclamationCircleFilled, PlusOutlined } from "@ant-design/icons";
+import {
+	DeleteFilled,
+	EditFilled,
+	ExclamationCircleFilled,
+	PlusOutlined,
+} from "@ant-design/icons";
 import { Button, Modal, Space, Table, Tag } from "antd";
 import { useEffect, useState } from "react";
 import DoctorModal from "../DoctorModal";
-import { useDeleteMutation, useGetDoctorListMutation } from "../../hooks/userHook";
+import {
+	useDeleteMutation,
+	useGetDoctorListMutation,
+} from "../../hooks/userHook";
 import { ToastContainer, toast } from "react-toastify";
 import { imageObj } from "../../utils/constants";
+import { getLS } from "../../utils/helperFunctions";
 const { confirm } = Modal;
 
 const DoctorBody = () => {
@@ -27,7 +36,9 @@ const DoctorBody = () => {
 	} = useDeleteMutation();
 
 	const fetchDocList = () => {
-		getDocList();
+		if (getLS("role") === "doctor" || getLS("role") === "admin") {
+			getDocList();
+		}
 	};
 
 	useEffect(() => {
@@ -57,9 +68,12 @@ const DoctorBody = () => {
 
 	useEffect(() => {
 		if (docError?.response) {
-			toast.error(docError?.response?.data?.message || "Error in deleting data", {
-				pauseOnHover: false,
-			});
+			toast.error(
+				docError?.response?.data?.message || "Error in deleting data",
+				{
+					pauseOnHover: false,
+				},
+			);
 		} else if (delDocData) {
 			toast.success(delDocData?.message);
 			setDoctorsList(reorganizeData(delDocData?.data));
@@ -68,14 +82,15 @@ const DoctorBody = () => {
 
 	const showDeleteConfirm = (record) => {
 		confirm({
-			title: 'Are you sure delete the doctor profile?',
+			title: "Are you sure delete the doctor profile?",
 			icon: <ExclamationCircleFilled />,
-			content: 'This is an irreversible action, dleted data can not be recovered.',
-			okText: 'Yes',
-			okType: 'danger',
-			cancelText: 'No',
+			content:
+				"This is an irreversible action, dleted data can not be recovered.",
+			okText: "Yes",
+			okType: "danger",
+			cancelText: "No",
 			onOk() {
-				deleteDoc({id: record._id, type: 'doctor'});
+				deleteDoc({ id: record._id, type: "doctor" });
 				fetchDocList();
 			},
 			onCancel() {
@@ -90,7 +105,7 @@ const DoctorBody = () => {
 	};
 
 	const onDelete = (record) => {
-		showDeleteConfirm(record)
+		showDeleteConfirm(record);
 	};
 
 	const columns = [
@@ -151,10 +166,26 @@ const DoctorBody = () => {
 			key: "action",
 			render: (_, record) => (
 				<Space size='medium'>
-					<Button type='secondary' size='large' title='Edit' onClick={() => {onEdit(record)}} style={{ color: "blue" }}>
+					<Button
+						type='secondary'
+						size='large'
+						title='Edit'
+						onClick={() => {
+							onEdit(record);
+						}}
+						style={{ color: "blue" }}
+					>
 						<EditFilled />
 					</Button>
-					<Button type='secondary' size='large' title='Delete' onClick={() => {onDelete(record)}} style={{ color: "red" }}>
+					<Button
+						type='secondary'
+						size='large'
+						title='Delete'
+						onClick={() => {
+							onDelete(record);
+						}}
+						style={{ color: "red" }}
+					>
 						<DeleteFilled />
 					</Button>
 				</Space>
@@ -170,6 +201,7 @@ const DoctorBody = () => {
 				fetchDocList={fetchDocList}
 				editableData={editableData}
 				setEditableData={setEditableData}
+				toast={toast}
 			/>
 			<div className='doc-app__doctors' id='docBody'>
 				{!doctorsList.length ? (
