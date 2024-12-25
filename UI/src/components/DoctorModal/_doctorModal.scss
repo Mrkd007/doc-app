@@ -1,0 +1,23 @@
+.doc-app__docmodal {
+  
+
+  &-form {
+    width: 100%;
+    max-width: 45rem;
+    display: flex;
+    flex-direction: column;
+    // gap: 1rem;
+
+    &-section {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+      flex: 1;
+
+      .ant-form-item {
+        width: 100%;
+        flex: 1;
+      }
+    }
+  }
+}

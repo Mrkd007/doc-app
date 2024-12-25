@@ -17,3 +17,8 @@ export const userLoggedIn = () => {
 		return true;
 	}
 };
+
+export const getAuthHeader = () => {
+	const token = getLS("token");
+	return { headers: { Authorization: `Bearer ${token}` } };
+};

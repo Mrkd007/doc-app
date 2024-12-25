@@ -97,78 +97,6 @@ const loginController = async (req, res) => {
 	}
 };
 
-// REGISTER DOCTOR
-const addDoctorController = async (req, res) => {
-	try {
-		const {
-			userName,
-			email,
-			password,
-			phone,
-			role,
-			profile,
-			address,
-			gender,
-			speciality,
-			rating,
-			designation,
-			about,
-		} = req.body;
-		// validation
-		if (
-			!userName ||
-			!email ||
-			!password ||
-			!phone ||
-			!role ||
-			!speciality ||
-			!designation ||
-			!gender
-		) {
-			return res.send(500).send({
-				success: false,
-				message: "Please provide all field data",
-			});
-		}
-		// check existance
-		const existing = await doctorModel.findOne({ email });
-		if (existing) {
-			return res.send(500).send({
-				success: false,
-				message: "Doctor profile already exists",
-			});
-		}
-		// password hashing
-		const hashPassword = await bcrypt.hash(password, salt);
-		// create doctor profile
-		const user = await doctorModel.create({
-			userName,
-			email,
-			password: hashPassword,
-			phone,
-			role,
-			profile,
-			address,
-			gender,
-			speciality,
-			rating,
-			designation,
-			about: about || "NA",
-		});
-		res.status(201).send({
-			success: true,
-			message: "Successfully registered",
-		});
-	} catch (error) {
-		console.log("Auth error --> ".bgBlue, error);
-		res.send(500).send({
-			success: false,
-			message: "Error in register api",
-			error,
-		});
-	}
-};
-
 // LOGIN DOCTOR
 const loginDocController = async (req, res) => {
 	try {
@@ -221,6 +149,5 @@ const loginDocController = async (req, res) => {
 module.exports = {
 	registerController,
 	loginController,
-	addDoctorController,
 	loginDocController,
 };

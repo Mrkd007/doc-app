@@ -5,6 +5,8 @@ const {
 	resetPasswordController,
 	updatePasswordController,
 	deleteProfileController,
+	getDoctorListController,
+	addDoctorController,
 } = require("../controllers/userController");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -24,6 +26,12 @@ router.post("/updatePassword", authMiddleware, updatePasswordController);
 router.post("/resetPassword", authMiddleware, resetPasswordController);
 
 // DELETE USER || DELETE
-router.delete("/deleteUser/:id", authMiddleware, deleteProfileController);
+router.delete("/deleteUser/:id/:type", authMiddleware, deleteProfileController);
+
+// ADD_DOC || POST
+router.post("/add-doctor", authMiddleware, addDoctorController);
+
+// GET USER || GET
+router.get("/doc-list", authMiddleware, getDoctorListController);
 
 module.exports = router;

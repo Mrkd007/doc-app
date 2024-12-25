@@ -33,7 +33,7 @@ const HeaderComp = ({ selectedTab }) => {
 	};
 
 	const handleButtonClick = (values) => {
-		console.log(values, 111);
+		navigate("/profile");
 	};
 
 	const items1 = [
